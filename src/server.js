@@ -5,7 +5,7 @@ const cors = require("cors");
 
 // Enable CORS for requests from your frontend origin
 const corsOptions = {
-    origin: 'http://127.0.0.1:5502',  // Allow requests from this origin
+    origin: '*',  // Allow requests from this origin
     methods: ['GET', 'POST', 'PUT', 'DELETE'],         // Allow specific methods (e.g., POST)
     allowedHeaders: ['Content-Type']  // Allow headers (adjust as needed)
 };

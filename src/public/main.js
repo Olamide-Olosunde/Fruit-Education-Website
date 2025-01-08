@@ -165,9 +165,7 @@ if( isValid )
         console.log("Form submitted successfully:", result);
         // done = true;
         // alert("Form submitted successfully!");
-        // window.location.href = `fruit.html?fname=${data.fname}`;
-        localStorage.setItem('fname', result.fname);
-        window.location.href = "fruit.html";
+        window.location.href = `fruit.html?fname=${data.fname}`;
     })
     .catch(error => {
         console.log("Error submitting form:", error);

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="fruit.css" rel="stylesheet">
+
+        <script src="fruit.js" defer></script>
+        <script src="signin.js" defer></script>
+        <!-- <script src="main.js" defer></script> -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Fruits</title>
+        <link href="fruit icon.png" rel="icon" class="icon">
+
+        <script>
+            window.onload = function(){
+                const fname = localStorage.getItem('fname');
+                // const urlParams = new URLSearchParams(window.location.search);
+                // const fname = urlParams.get('fname');
+                if( fname )
+                {
+                    document.getElementById('FruiT').innerHTML = `Hello ${fname},`;
+                    document.getElementById('signin_up').style.display = 'none';
+                    
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        
+        <header>
+            <nav id="navbar">
+                <h1 id="FruiT">Fruit</h1>
+                <div class="hamburger" id="hamburger" onclick="toggle()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="menu">
+                    <li><a href="fruit.html">Home</a></li>
+                    <!-- <li><a href="feedback.html">Feedback</a></li> -->
+                     <!-- <li><a href="myinfo.html">My Info</a></li> -->
+                    <li><a href="about.html">About</a></li>
+                    <li id="signin_up"><a href="index.html">Sign up/Log in</a></li><!--(sign up to our news feed)-->
+                    
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+        
+
+        <div class="sth">
+    
+        </div>
+        <!-- <h1 style="text-align: center">Fruits</h1> -->
+        <p>
+            Fruits are the mature reproductive structures of flowering plants, usually containing seeds, that develop from the fertilized ovary of a flower. They play a crucial role in plant reproduction by helping to disperse seeds, and they are widely consumed by humans and animals due to their appealing taste, texture, and nutritional value.
+        </p>
+
+        <h2>Types of Fruits</h2>
+        <ol>
+            <li>Simple Fruits - Develop from a single ovary of a single flower. Examples:</li>
+            <ul>
+                <li>Citrus fruits like oranges and lemons</li>
+                <li>Stone fruits like peaches, cherries, and plums</li>
+                <li>Berries like strawberries, blueberries, and raspberries</li>
+            </ul>
+
+            <li>Aggregate Fruits - Form from a single flower with multiple ovaries. Examples:</li>
+            <ul>
+                <li>Raspberries and blackberries</li>
+                <li>Strawberries (the small "seeds" on the surface are actually individual fruits)</li>
+            </ul>
+
+            <li>Multiple Fruits - Develop from the ovaries of multiple flowers that are closely packed together. Example:</li>
+            <ul>
+                <li>Pineapples and figs</li>
+            </ul>
+
+        </ol>
+
+
+        <h2>Nutritional Benefits</h2>
+        <ul>
+            <li>Vitamins: Fruits are excellent sources of vitamins like vitamin C (citrus fruits), vitamin A (mangoes, apricots), and folate (oranges, bananas).</li>
+            <li>Minerals: Fruits provide essential minerals such as potassium (bananas, melons) and magnesium (avocados, figs).</li>
+            <li>Fiber: Many fruits are rich in dietary fiber, which supports digestive health.</li>
+            <li>Antioxidants: Fruits like berries, grapes, and apples contain antioxidants that help protect cells from oxidative damage.</li>
+            <li>Water: Many fruits have a high water content, making them hydrating and refreshing.</li>
+        </ul>
+        
+        <h2>Popular Fruits Around the World:</h2>
+        <ul>
+            <li><a href="tropical.html" target="_self">Tropical fruits</a>: Mangoes, pineapples, coconuts, bananas, papayas</li>
+            <li><a href="temperate.html" target="_self">Temperate fruits</a>: Apples, pears, cherries, grapes, peaches, plums</li>
+            <li><a href="berries.html" target="_self">Berries</a>: Strawberries, raspberries, blackberries, blueberries</li>
+            <li><a href="citrus.html" target="_self">Citrus fruits</a>: Oranges, lemons, limes, grapefruits</li>
+        </ul>
+
+        <p>Fruits are often enjoyed fresh, but they can also be preserved in various ways—through drying, canning, or making juices and jams. They are also key ingredients in many dishes, including smoothies, salads, desserts, and sauces.</p>
+
+        <p>In summary, fruits are not only delicious but also nutritious, offering a variety of vitamins, minerals, fiber, and antioxidants to support overall health.</p>
+    </main>
+
+        <footer>
+            <ul>
+                <li>
+                    <a href="https://www.liveeatlearn.com/list-of-fruits/" target="_blank">Learn more about fruits</a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+
+</html>

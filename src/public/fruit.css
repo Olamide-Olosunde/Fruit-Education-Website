@@ -1,0 +1,224 @@
+body {
+    /* border-image: fill; */
+    /*To use background photos, you'd need 'tabs' to put your text onto. You don't just put text on a photo, asides it's really plain*/
+    background-image: url('fruit_photo.jpg');
+    /* background: linear-gradient(greenyellow, orange); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
+footer{
+    justify-content: baseline;
+}
+
+/* #sth{
+    border: 10px solid black;
+    height: 250px;
+    width: 250px;
+    background-color: tomato;
+    
+    position: relative;
+} */
+
+h1,h2,p,li{
+    color: #f7f5f5;
+    /* color: #3E1F1B;the color of background photo is olive green */
+}
+
+h1{
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+/* head > .icon{
+    border-radius: 100px;
+} */
+
+nav {
+    /* border-bottom: black;
+    border-bottom-style:solid;
+    border-bottom-width: 3px;
+    border-radius: 100px; */
+
+    border-bottom:white;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    display: flex;
+
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+nav h1{
+    font-size: 35pt;
+    display: flex;
+
+    /* align-items: center; */
+    /* border: black solid; */
+    /* border-width: 1px; */
+    margin-bottom: 20px;
+
+    margin-left: 35px;
+}
+
+.bar{
+    margin-bottom: 5px;
+}
+
+.hamburger{
+    display: none;/*to be hidden by defualt*/
+    flex-direction: column;
+    width: 30px;
+    height: 50px;
+    justify-content: space-around;
+    cursor: pointer;
+
+    margin-top: 50px;/*should probably use top: 50px or sth*/
+    margin-right: 50px;
+    align-items: center;
+}
+
+.hamburger .bar{
+    width: 60px;
+    height: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/*hamburger animation (to "X")*/
+.hamburger.active .bar:nth-child(1){
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.hamburger .active .bar:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger .active .bar:nth-child(3){
+    transform: rotate(-45deg);
+    position: relative;
+    bottom: 8px;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-size: 25pt;
+
+    align-items: center;
+
+    display: flex;
+    justify-content: right;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+nav > ul > li{
+    /*button*/
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    padding: 15px 30px 15px 30px;/*top, right, bottom, left*/
+
+    
+}
+
+nav > ul > li:hover{
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /*Smooth transition basically*/
+
+    background-color: blue;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+nav ul li:hover a{
+    color: white;
+}
+
+nav > ul > li > a{
+    width: 200px;
+    text-align: center;
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    /* clear: left;
+    padding: 0 30px;
+    overflow: hidden; */
+    margin: 0px 8px 0px 8px;
+}
+
+body{
+    margin: 0px;
+    font-family: system-ui, -apple-system, 'Times New Roman';
+    height: 100vh;
+    position: relative;
+}
+
+footer{
+    font-size: 1em;
+    background-color: purple;
+
+    text-align: center;
+    padding: 5px;
+    /* clear: both; */
+    margin: 0px;
+    /* border-color: red; */
+    /* border-width: 10px; */
+    /* position: absolute; */
+}
+
+footer li{
+    list-style-type: none;
+}
+
+footer ul li a{
+    color: white;
+}
+
+@media only screen and (max-width: 760px)
+{
+    #hamburger{
+        display: flex;
+    }
+
+
+    nav ul{/*ul OR #menu*/
+        display: none;/*hide the menu by default*/
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        position: absolute;
+        
+        top: 120px;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    /* nav ul .active{
+        display: block;
+    } */
+
+    nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a{
+        padding: 15px 0;
+        display: block;
+        color: blue;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="fruit icon.png" rel="icon">
+    <link href="main.css" rel="stylesheet">
+    <style>
+        body, html{
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: darkgray;
+        }
+
+        #theForm{
+            padding: 30px;
+            background-color: darkslategrey;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+        }
+        #email{
+            border-radius: 5px;
+            height: 25px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="signin.js" defer></script>
+
+    <title>Sign In</title>
+</head>
+<body>
+    <div id="theForm" >
+    <form id="user" class="form" >
+        <h1 id="smth"></h1>
+        <label>Email<span style="color: red">*</span></label><br>
+        <input type="email" name="email" id="email">
+        <span class="error" id="emailError"></span>
+        <br>
+        <br>
+        <input type="submit" id="submit">
+            
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn about Fruits🍉</title>
+        <link href="fruit icon.png" rel="icon">
+        <link href="main.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="main.js" defer></script>
+    </head>
+    <body style="background-color: darkgray;">
+        <div id="userData"></div>
+        <!-- Form to sign up -->
+         
+         <div id="theForm">
+
+    <form id="user" class="form" novalidate>
+        <h1 style="text-align: center; font-family: system-ui; color: aliceblue;">Sign up to learn more about fruits</h1>
+        <label for="prefix">Prefix</label><br>
+        <select name="prefix" class="prefix" id="prefix" onchange="showC_P()">
+            <option value=""></option>
+            <option value="Mr.">Mr.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Miss">Miss</option>
+            <option value="Dr.">Dr.</option>
+            <option value="King">King</option>
+            <option value="Queen">Queen</option>
+            <option value="other">Other</option>
+        </select>
+
+        <div id="c_p" style="display: none;">
+            <br>
+            <label for="custom_prefix">Enter your prefix:</label>
+            <br>
+            <input type="text" name="custom_prefix" class="prefix" id="custom_prefix">
+        </div>
+
+        
+        <br id="br">
+        <br>
+        <label for="fname">First Name<span style="color: red">*</span></label><br>
+        <input type="text" name="fname" id="fname" >
+        <span class="error" id="fnameError"></span>
+        <br>
+        <br>
+        <label for="lname">Last Name<span style="color: red">*</span></label><br>
+        <input type="text" name="lname" id="lname" >
+        <span class="error" id="lnameError"></span>
+        <br>
+        <br>
+        <label>Email<span style="color: red">*</span></label><br>
+        <input type="email" name="email" id="email">
+        <span class="error" id="emailError"></span>
+        <br>
+        <br>
+        <label for="DOB">Date of Birth<span style="color: red">*</span></label><br>
+        <input type="date" id="dob" name="DOB" >
+        <span class="error" id="dobError"></span>
+        <br>
+        <br>
+        <label for="gender">Gender</label><br>
+        <input type="radio" name="gender" id="male" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="other" value="Other">
+        <label for="other">Other</label>
+        <br>
+        <br>
+        <label>Profession<span style="color: red">*</span></label><br>
+        <select name="profession" id="prof" >
+            <option value=""></option>
+            <option value="Student">Student</option>
+            <option value="Staff">Staff</option>
+            <option value="Faculty">Faculty</option>
+            <option value="Other">Other</option>
+        </select>
+        <span class="error" id="profError"></span>
+        <br>
+        <br>
+        <label for="about">About yourself:</label><br>
+        <textarea name="about" id="about" rows="4" cols="50"></textarea>
+        <br>
+        <br>
+
+
+        
+        <input type="submit" id="submit">
+        
+        <!-- <span id="reqFields"></span> -->
+            
+    </form>
+    <button id="signIn" style="border-radius: 7px;" onclick="signIn()" >Sign in</button>
+    
+    <footer>
+        <!-- <button id="lightOrDark" onclick="lightOrDarkMode()">Light/Dark Mode</button> -->
+         <button id="skip" style="padding: 10px; border-radius: 10px; font-family: system-ui; background-color: #97b4ea;"
+         onclick="window.location.href = 'fruit.html'">Skip Sign Up</button><!--blue-->
+    </footer>
+    </div>
+    </body>
+</html>

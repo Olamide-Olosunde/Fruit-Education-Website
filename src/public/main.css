@@ -1,0 +1,56 @@
+/* div{
+    border: 10px solid black;
+} */
+/* input{
+    border-radius: 7px;
+}
+select{
+    border-radius: 7px;
+} */
+
+.error{
+    border: 2px solid red;
+    font-size: 12pt;
+    display: none;
+    
+    background-color: lightcoral;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+}
+
+/* #body{
+    justify-content: center;
+    border: 10px solid red;
+} */
+
+body, html{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+}
+
+#theForm{
+    padding: 20px;
+    background-color: darkslategrey;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+#skip, #submit{
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+#signIn{
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,147 @@
+body{
+    margin: 0px;
+}
+main{
+    margin: 0px 8px 0px 8px;
+    font-size: 14pt;
+}
+table, td,tr,th{
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    /* text-layout: fixed; */
+    
+}
+.table-caption{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 0px;
+}
+table{
+    width: 100%;
+}
+
+div > th > td{
+    border: 100px solid;
+    text-align: center;
+    
+}
+
+.col{
+    padding: 15px;
+    background-color: #f4f4f4;
+}
+
+.main{
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.body{
+    padding-left: 4px;
+    
+}
+
+nav {
+    /* border-bottom: black;
+    border-bottom-style:solid;
+    border-bottom-width: 3px;
+    border-radius: 100px; */
+
+    border-bottom:black;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    display: flex;
+
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+nav h1{
+    font-size: 35pt;
+    display: flex;
+
+    /* align-items: center; */
+    /* border: black solid; */
+    /* border-width: 1px; */
+    margin-bottom: 20px;
+
+    margin-left: 35px;
+}
+
+
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-size: 25pt;
+
+    align-items: center;
+
+    display: flex;
+    justify-content: right;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+nav > ul > li{
+    /*button*/
+    background-color: lightgreen;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    padding: 15px 30px 15px 30px;/*top, right, bottom, left*/
+
+    
+}
+
+nav > ul > li:hover{
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /*Smooth transition basically*/
+
+    background-color: darkgreen;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+nav ul li:hover a{
+    color: white;
+}
+
+nav > ul > li > a{
+    width: 200px;
+    text-align: center;
+
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+@media only screen and (max-width: 650px){
+    
+    .body{
+        padding-left: 5px;
+    }
+    .table{
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        height: 420px;
+        
+    }
+    .table-caption{
+        text-decoration: none;
+        margin-bottom: 5px;
+    }
+    th[scope='stick']{
+        position: sticky;
+        top: -1px;
+        /* box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3); doesn't work on mobile for some reason*/
+    }
+    /* th.main{
+        position: sticky;
+        left: -1px;
+        box-shadow: 100px 100px 5px rgba(0, 0, 0, 0.3);
+    } */
+}

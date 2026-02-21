@@ -1,224 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    /* border-image: fill; */
-    /*To use background photos, you'd need 'tabs' to put your text onto. You don't just put text on a photo, asides it's really plain*/
-    background-image: url('fruit_photo.jpg');
-    /* background: linear-gradient(greenyellow, orange); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
     
+    background: 
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('fruit_photo.jpg') center/cover no-repeat fixed;
+
+    color: #ffffff;
 }
 
-footer{
-    justify-content: baseline;
-}
-
-/* #sth{
-    border: 10px solid black;
-    height: 250px;
-    width: 250px;
-    background-color: tomato;
-    
-    position: relative;
-} */
-
-h1,h2,p,li{
-    color: #f7f5f5;
-    /* color: #3E1F1B;the color of background photo is olive green */
-}
-
-h1{
-    margin-bottom: -10px;
+h1, h2 {
     text-align: center;
+    margin-bottom: 0.5rem;
 }
 
-/* head > .icon{
-    border-radius: 100px;
-} */
-
-nav {
-    /* border-bottom: black;
-    border-bottom-style:solid;
-    border-bottom-width: 3px;
-    border-radius: 100px; */
-
-    border-bottom:white;
-    border-bottom-style: solid;
-    border-bottom-width: 5px;
-    display: flex;
-
-    justify-content: space-between;
-    /* align-items: center; */
+p, li {
+    line-height: 1.6;
 }
 
-nav h1{
-    font-size: 35pt;
-    display: flex;
-
-    /* align-items: center; */
-    /* border: black solid; */
-    /* border-width: 1px; */
-    margin-bottom: 20px;
-
-    margin-left: 35px;
-}
-
-.bar{
-    margin-bottom: 5px;
-}
-
-.hamburger{
-    display: none;/*to be hidden by defualt*/
-    flex-direction: column;
-    width: 30px;
-    height: 50px;
-    justify-content: space-around;
-    cursor: pointer;
-
-    margin-top: 50px;/*should probably use top: 50px or sth*/
-    margin-right: 50px;
-    align-items: center;
-}
-
-.hamburger .bar{
-    width: 60px;
-    height: 10px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-/*hamburger animation (to "X")*/
-.hamburger.active .bar:nth-child(1){
-    transform: rotate(45deg);
+main a {
+    color: #ffffff;
+    text-decoration: none;
     position: relative;
-    top: 8px;
+    transition: color 0.3s ease;
+    color: #ffd166;
 }
 
-.hamburger .active .bar:nth-child(2){
+main a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+main a:hover::after {
+    width: 100%;
+}
+
+/* nav bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+nav h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    display: block;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #ffffff;
+    color: #222;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(20px);
+}
+
+.hamburger.active .bar:nth-child(2) {
     opacity: 0;
 }
 
-.hamburger .active .bar:nth-child(3){
-    transform: rotate(-45deg);
-    position: relative;
-    bottom: 8px;
-}
-
-nav ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    font-size: 25pt;
-
-    align-items: center;
-
-    display: flex;
-    justify-content: right;
-    margin-bottom: 0px;
-    margin-top: 5px;
-}
-
-nav > ul > li{
-    /*button*/
-    background-color: white;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 15px;
-    padding: 15px 30px 15px 30px;/*top, right, bottom, left*/
-
-    
-}
-
-nav > ul > li:hover{
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /*Smooth transition basically*/
-
-    background-color: blue;
-    transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-}
-
-nav ul li:hover a{
-    color: white;
-}
-
-nav > ul > li > a{
-    width: 200px;
-    text-align: center;
-
-    text-decoration: none;
-    font-weight: bold;
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-20px);
 }
 
 main {
-    /* clear: left;
-    padding: 0 30px;
-    overflow: hidden; */
-    margin: 0px 8px 0px 8px;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 2rem;
+
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
 }
 
-body{
-    margin: 0px;
-    font-family: system-ui, -apple-system, 'Times New Roman';
-    height: 100vh;
-    position: relative;
-}
-
-footer{
-    font-size: 1em;
-    background-color: purple;
-
+/* footer */
+footer {
     text-align: center;
-    padding: 5px;
-    /* clear: both; */
-    margin: 0px;
-    /* border-color: red; */
-    /* border-width: 10px; */
-    /* position: absolute; */
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 2rem;
 }
 
-footer li{
-    list-style-type: none;
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-footer ul li a{
-    color: white;
+footer a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-@media only screen and (max-width: 760px)
-{
-    #hamburger{
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+    .hamburger {
         display: flex;
     }
 
-
-    nav ul{/*ul OR #menu*/
-        display: none;/*hide the menu by default*/
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        position: absolute;
-        
-        top: 120px;
-        left: 0;
-        transition: all 0.3s ease;
+        background: rgba(0,0,0,0.9);
+        padding: 1rem 0;
+        display: none;
     }
 
-    /* nav ul .active{
-        display: block;
-    } */
+    nav ul.active {
+        display: flex;
+    }
 
-    nav ul li{
+    nav ul li {
         width: 100%;
         text-align: center;
     }
 
-    nav ul li a{
-        padding: 15px 0;
-        display: block;
-        color: blue;
+    nav ul li a {
+        width: 100%;
+        padding: 1rem 0;
     }
 }

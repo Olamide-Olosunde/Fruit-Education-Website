@@ -1,131 +1,50 @@
-body{
-    background: linear-gradient(to right, green, orange);
-    font-family: system-ui, -apple-system, 'Times New Roman';
-    margin: 0px;
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
-main {
-    margin: 0px 8px 0px 8px;
-    font-size: 14pt;
-}
-
-nav {
-    /* border-bottom: black;
-    border-bottom-style:solid;
-    border-bottom-width: 3px;
-    border-radius: 100px; */
-
-    border-bottom: black;
-    border-bottom-style: solid;
-    border-bottom-width: 5px;
-    display: flex;
-
-    justify-content: space-between;
-    /* align-items: center; */
-}
-
-nav h1{
-    font-size: 35pt;
-    display: flex;
-
-    /* align-items: center; */
-    /* border: black solid; */
-    /* border-width: 1px; */
-    margin-bottom: 20px;
-
-    margin-left: 35px;
-}
-
-.bar{
-    margin-bottom: 5px;
-}
-
-.hamburger{
-    display: none;/*to be hidden by defualt*/
-    flex-direction: column;
-    width: 30px;
-    height: 50px;
-    justify-content: space-around;
-    cursor: pointer;
-
-    margin-top: 50px;/*should probably use top: 50px or sth*/
-    margin-right: 50px;
-    align-items: center;
-}
-
-.hamburger .bar{
-    width: 60px;
-    height: 10px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-/*hamburger animation (to "X")*/
-.hamburger.active .bar:nth-child(1){
-    transform: rotate(45deg);
-    position: relative;
-    top: 8px;
-}
-
-.hamburger .active .bar:nth-child(2){
-    opacity: 0;
-}
-
-.hamburger .active .bar:nth-child(3){
-    transform: rotate(-45deg);
-    position: relative;
-    bottom: 8px;
-}
-
-nav ul{
-    list-style-type: none;
+body {
     margin: 0;
-    padding: 0;
-    position: relative;
-    font-size: 25pt;
-
-    align-items: center;
-
-    display: flex;
-    justify-content: right;
-    margin-bottom: 0px;
-    margin-top: 5px;
-}
-
-nav > ul > li{
-    /*button*/
-    background-color: green;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 15px;
-    padding: 15px 30px 15px 30px;/*top, right, bottom, left*/
-
-}
-
-
-nav > ul > li:hover{
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /*Smooth transition basically*/
-
-    background-color: blue;
-    transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-}
-
-nav ul li:hover a{
+    min-height: 100vh;
+    background:
+        linear-gradient(to right, #1e3c2f, #9a6b1f);
     color: white;
 }
 
-nav > ul > li > a{
-    width: 200px;
-    text-align: center;
-
-    text-decoration: none;
-    font-weight: bold;
-    color: lightgoldenrodyellow;
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
 }
 
-@media only screen and (max-width: 760px){
-    h2{
-        text-align: center;
-    }
+/* nav bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.4);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: white;
+    color: black;
 }

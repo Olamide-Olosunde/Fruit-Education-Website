@@ -24,34 +24,45 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+
     backdrop-filter: blur(10px);
-    background: rgba(0,0,0,0.4);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
 }
 
 nav h1 {
     font-size: 2rem;
+    margin: 1rem 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 1.5rem;
+    margin: 0;
     padding: 0;
+}
+
+nav ul li {
+    border-radius: 30px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a {
     text-decoration: none;
+    font-weight: 600;
     color: white;
     padding: 0.6rem 1.4rem;
+    display: block;
     border-radius: 30px;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: white;
+    background: #ffffff;
     color: #222;
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* examples */
@@ -131,6 +142,6 @@ nav ul li a:hover {
     }
 
     #examples img {
-        height: auto;
+        height: 30%;
     }
 }

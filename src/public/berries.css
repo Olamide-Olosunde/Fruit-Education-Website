@@ -1,88 +1,68 @@
-h1,h2,p,li{
-    color: white;
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
 }
 
-body{
-    background-color: #722F37;
-    margin: 0px;
+body {
+    margin: 0;
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        #722F37;
+    color: white;
 }
 
 main {
-    margin: 0px 8px 0px 8px;
-    font-size: 14pt;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
 }
 
+/* nav bar */
 nav {
-    /* border-bottom: black;
-    border-bottom-style:solid;
-    border-bottom-width: 3px;
-    border-radius: 100px; */
-
-    border-bottom:white;
-    border-bottom-style: solid;
-    border-bottom-width: 5px;
     display: flex;
-
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
+    padding: 0 2rem;
+
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
 }
 
-nav h1{
-    font-size: 35pt;
+nav h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
-
-    /* align-items: center; */
-    /* border: black solid; */
-    /* border-width: 1px; */
-    margin-bottom: 20px;
-
-    margin-left: 35px;
-}
-
-
-
-nav ul{
-    list-style-type: none;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
-    position: relative;
-    font-size: 25pt;
-
-    align-items: center;
-
-    display: flex;
-    justify-content: right;
-    margin-bottom: 0px;
-    margin-top: 5px;
 }
 
-nav > ul > li{
-    /*button*/
-    background-color: white;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 15px;
-    padding: 15px 30px 15px 30px;/*top, right, bottom, left*/
-
-    
+nav ul li {
+    border-radius: 30px;
+    transition: all 0.3s ease;
 }
 
-nav > ul > li:hover{
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /*Smooth transition basically*/
-
-    background-color: blue;
-    transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-}
-
-nav ul li:hover a{
-    color: white;
-}
-
-nav > ul > li > a{
-    width: 200px;
-    text-align: center;
-
+nav ul li a {
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    display: block;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #ffffff;
+    color: #222;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }

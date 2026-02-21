@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("fruit_photo.jpg") center/cover no-repeat fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    font-family: system-ui, -apple-system, 'Times New Roman', sans-serif;
+    color: white;
+}
+
+main, .about-content {
+    max-width: 900px;
+    width: 100%;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.about-content p.smile {
+    font-size: 60pt;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    display: block;
+}
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .about-content {
+        padding: 1.5rem 2rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .about-content {
+        padding: 1.2rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    .about-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .about-content p.smile {
+        font-size: 40pt;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content {
+        padding: 1rem 1rem;
+    }
+
+    .about-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}

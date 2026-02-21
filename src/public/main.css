@@ -1,61 +1,134 @@
-/* div{
-    border: 10px solid black;
-} */
-/* input{
-    border-radius: 7px;
-}
-select{
-    border-radius: 7px;
-} */
-
-.error{
-    border: 2px solid red;
-    font-size: 12pt;
-    display: none;
-    
-    background-color: lightcoral;
-    color: white;
-    border-radius: 5px;
-    padding: 10px 10px 10px 10px;
-    margin-top: 10px;
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* #body{
-    justify-content: center;
-    border: 10px solid red;
-} */
-#submit, #skip, #signIn{
-    border: 0px;
-}
-
-body, html{
+html, body {
     margin: 0;
+    min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: darkgray;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("fruit_photo.jpg") center/cover no-repeat fixed;
+
+    color: white;
 }
 
-#theForm{
-    padding: 20px;
-    background-color: darkslategrey;
-    border-radius: 10px;
+#theForm {
     width: 100%;
     max-width: 500px;
+    padding: 2rem;
 
-    height: 100%;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-#skip, #submit{
-    width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 5px;
-    border-radius: 10px;
+option{
+    color: #000;
 }
 
-#signIn{
+input,
+select,
+#about {
     width: 100%;
-    padding: 10px 0px 10px 0px;
-    margin-bottom: 5px;
+    padding: 0.9rem;
+    margin-bottom: 1rem;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.08);
+    color: white;
+
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+input:focus,
+select:focus,
+#about:focus {
+    border-color: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.15);
+}
+
+#submit,
+#skip,
+#signIn {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+
+    border: none;
+    border-radius: 14px;
+
+    background: white;
+    color: #222;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+#submit:hover,
+#skip:hover,
+#signIn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+#submit {
+    background: linear-gradient(45deg, #ffd166, #fca311);
+    color: #222;
+}
+
+.error {
+    display: none;
+
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+
+    border-radius: 12px;
+    font-size: 0.9rem;
+
+    background: rgba(255, 70, 70, 0.85);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+#gender {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+
+    #theForm {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    input,
+    select {
+        font-size: 0.95rem;
+    }
+
+    #submit,
+    #skip,
+    #signIn {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
 }

@@ -4,12 +4,15 @@ A production-style full-stack web application that allows users to learn about f
 # Live Demo
 https://fruit.iamola.net/
 
-# Architecutre Overview
+# Purpose
+This project was built to demonstrate full-stack development concepts including REST API design, authentication workflows, containerization, and production-style deployment.
+
+# Architecture Overview
 * Client (HTML/CSS/JS)
-* Reverse Proxy: NGINX
-* Backend API: Node.js + Express
-* Containerized with Docker
-* Hosted on DigitalOcean
+* Reverse Proxy: **NGINX**
+* Backend API: **Node.js** + Express
+* Containerized with **Docker**
+* Hosted on **DigitalOcean**
 
 # Technical Highlights
 * RESTful API architecture
@@ -22,9 +25,15 @@ https://fruit.iamola.net/
 * Modular route/controller structure
 
 # Authentication
+Current implementation:
 * User registration and login system
-* Backend validation and user management
-* (Planned) Password hashing and JWT-based session management
+* Backend validation
+* User management endpoints
+
+Planned security upgrades:
+* Password hashing using bcrypt
+* JWT-based authentication
+* Route protection middleware
 
 # Installation
 ### 1. Start the docker engine
@@ -76,7 +85,7 @@ http://localhost:3005
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
 | POST | /api/user | Create new user |
-| GET | /api/user/:Email | Retrieve a user by their email |
+| GET | /api/user/:Email | Retrieve a user by email |
 | GET | /api/user/ | Retrieve all users |
 | PUT | /api/user/:id | Update an existing user |
 | DELETE | /api/user/:id | Delete a user |

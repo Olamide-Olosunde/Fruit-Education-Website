@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  backend:
+    image: ohhhla/fruit:backend
+    container_name: backend
+    ports:
+      - "3005:3005"
+
+  frontend:
+    image: ohhhla/fruit:frontend
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  data:

@@ -3,20 +3,17 @@ const dbloader = require("better-sqlite3");
 const fs = require("fs");
 const cors = require("cors");
 
-// Enable CORS for requests from your frontend origin
 const corsOptions = {
-    origin: '*',  // Allow requests from this origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],         // Allow specific methods (e.g., POST)
-    allowedHeaders: ['Content-Type']  // Allow headers (adjust as needed)
+    origin: ['http://localhost', 'http://127.0.0.1:5502'], //prod & dev respectively
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
 };
-
 
 
 const path = require("path");
 const app = express();
 app.use(express.json());
 
-// Use CORS middleware
 app.use(cors(corsOptions));
 
 const db = dbloader(
@@ -68,13 +65,12 @@ app.post("/api/user", (req, res)=>{
 app.get("/api/user/:Email", (req, res)=>{
     const Email = req.params.Email;
 
-    // if( isNaN(Email) )
-    // {
-    //     console.log("Enter an email");
-    //     res.sendStatus(400);
-    //     return;
-    // }
-    //isNan is just for numbers
+    if( !Email )
+    {
+        console.log("Enter an email");
+        res.sendStatus(400);
+        return;
+    }
 
     try{
         const data = db.prepare("SELECT * FROM users WHERE email = ?").get(Email);
@@ -87,7 +83,31 @@ app.get("/api/user/:Email", (req, res)=>{
         }
         console.log(Email);
         console.log(data);
-        res.send(data);//to paste it on the postman board (at the bottom)
+        res.send(data);
+
+    } catch(err)
+    {
+        console.error(err);
+        res.sendStatus(500);
+    }
+
+
+})
+
+//read all
+app.get("/api/user/", (req, res)=>{
+
+    try{
+        const data = db.prepare("SELECT * FROM users");
+
+        if( !data )
+        {
+            console.log("User not found");
+            res.sendStatus(404);
+            return;
+        }
+        console.log(data.all());
+        res.send(data.all());
 
     } catch(err)
     {
@@ -180,8 +200,7 @@ app.delete("/api/user/:id", (req, res)=>{
 
 })
 
-//assign the port dynamically
-const port = process.env.PORT || 3005;
+const port = 3005;
 app.listen(port, ()=>{
-    console.log(`Server is listening at port ${port}`);
+    // console.log(`Server is listening at port ${port}`);
 })

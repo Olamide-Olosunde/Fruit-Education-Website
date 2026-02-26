@@ -1,7 +1,35 @@
 # Fruit-Education-Website
-This is a website to educate people on fruits. This website was made as the Final Project for my Web Development class. It incorporates FrontEnd (HTML, CSS and JavaScript) and BackEnd (node.js, express, etc) properties.
+A production-style full-stack web application that allows users to learn about fruits and manage user accounts via a RESTful API.
 
-# How to Use
-1. Simply clone the repository on your preferred IDE
-2. Install all required dependencies
-3. Run the frontend and backend as you wish
+# Live Demo
+https://fruit.iamola.net/
+
+# Architecutre Overview
+Client (HTML/CSS/JS)
+Reverse Proxy: NGINX
+Backend API: Node.js + Express
+Containerized with Docker
+Hosted on DigitalOcean
+
+# Technical Highlights
+RESTful API architecture
+Full CRUD operations on users (backend)
+Authentication system (registration + login)
+Dockerized multi-service setup
+Reverse proxy configuration with NGINX
+Cloud deployment on DigitalOcean
+Environment-based configuration management
+Modular route/controller structure
+
+# Authentication
+User registration and login system
+Backend validation and user management
+(Planned) Password hashing and JWT-based session management
+
+# What I learned
+REST API design principles
+Authentication flow implementation
+Docker container orchestration
+Reverse proxy configuration
+Deploying full-stack apps to cloud infrastructure
+Environment variable management

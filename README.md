@@ -4,6 +4,14 @@ A production-style full-stack web application that allows users to learn about f
 # Live Demo
 https://fruit.iamola.net/
 
+# Preview
+<a href="https://fruit.iamola.net/">
+  <img src="./src/public/Preview_photos/fruit_home.png" width="100%" />
+</a>
+<a href="https://fruit.iamola.net/">
+  <img src="./src/public/Preview_photos/fruit_citrus.png" width="100%" />
+</a>
+
 # Purpose
 This project was built to demonstrate full-stack development concepts including REST API design, authentication workflows, containerization, and production-style deployment.
 

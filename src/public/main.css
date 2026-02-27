@@ -64,7 +64,8 @@ select:focus,
 
 #submit,
 #skip,
-#signIn {
+#signIn,
+#create_acct {
     width: 100%;
     padding: 1rem;
     margin-bottom: 0.8rem;
@@ -83,7 +84,8 @@ select:focus,
 
 #submit:hover,
 #skip:hover,
-#signIn:hover {
+#signIn:hover,
+#create_acct:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
@@ -127,7 +129,8 @@ select:focus,
 
     #submit,
     #skip,
-    #signIn {
+    #signIn,
+    #create_acct {
         padding: 0.9rem;
         font-size: 0.95rem;
     }

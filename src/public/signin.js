@@ -34,7 +34,12 @@ if( isValid )
     .then(response => {
         if( !response.ok )
         {
-            // console.log("An error was thrown");
+            if( response.status === 404 )
+            {
+                eErr.innerHTML = 'We couldn’t find your details in our database. Please, create an account to continue.';
+                eErr.style.display = 'block';
+                isValid = false;
+            }
             throw response;
         }
         else

@@ -16,6 +16,7 @@
 
     <form id="user" class="form" novalidate>
         <h1 style="text-align: center; font-family: system-ui; color: aliceblue;">Sign up to learn more about fruits</h1>
+        <span class="error" id="generalError" ></span>
         <label for="prefix">Prefix</label><br>
         <select name="prefix" class="prefix" id="prefix" onchange="showC_P()">
             <option value=""></option>
@@ -30,9 +31,9 @@
 
         <div id="c_p" style="display: none;">
             <br>
-            <label for="custom_prefix">Enter your prefix:</label>
+            <label for="custom_pre">Enter your prefix:</label>
             <br>
-            <input type="text" name="custom_prefix" class="prefix" id="custom_prefix">
+            <input type="text" name="custom_pre" class="prefix" id="custom_prefix">
         </div>
 
         
@@ -69,13 +70,23 @@
         </div>
         <br>
         <label>Profession<span style="color: red">*</span></label><br>
-        <select name="profession" id="prof" >
+        <select name="profession" id="prof">
             <option value=""></option>
             <option value="Student">Student</option>
-            <option value="Staff">Staff</option>
-            <option value="Faculty">Faculty</option>
+            <option value="Doctor">Doctor</option>
+            <option value="Lawyer">Lawyer</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Nurse">Nurse</option>
+            <option value="Architect">Architect</option>
+            <option value="Scientist">Scientist</option>
+            <option value="Accountant">Accountant</option>
             <option value="Other">Other</option>
         </select>
+        <div id="other_profession_div" style="display: none;">
+            <label for="other_profession">Enter your profession:<span style="color: red">*</span></label>
+            <input name="other_profession" id="other_profession">
+        </div>
         <span class="error" id="profError"></span>
         <br>
         <br>

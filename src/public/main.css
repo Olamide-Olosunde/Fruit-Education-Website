@@ -115,6 +115,27 @@ select:focus,
     margin-top: 10px;
 }
 
+#other_profession_div{
+    margin-top: 10px;
+    display: none;
+}
+
+#theForm{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#generalError{
+    background-color: transparent;
+    font-size: 15pt;
+    text-decoration: underline;
+    color: red;
+    border-width: 0;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 600px) {
 
     #theForm {

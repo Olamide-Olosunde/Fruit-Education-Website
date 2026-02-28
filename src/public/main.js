@@ -25,9 +25,21 @@ const form = document.getElementById('user');
 form.addEventListener("submit", event => {
     event.preventDefault();
 
-    // formData = new FormData(event.target);
-    if( document.getElementById('prefix').value === "other" )
-        document.getElementById('prefix').value = document.getElementById('custom_prefix').value;
+    function getActualPrefix()
+    {
+        if( document.getElementById('prefix').value === "other" )
+            return document.getElementById('custom_prefix').value;
+        else 
+            return document.getElementById('prefix').value;
+    }
+
+    function getActualProfession()
+    {
+        if( document.getElementById('prof').value === "Other" )
+            return document.getElementById('other_profession').value;
+        else
+            return document.getElementById('prof').value;
+    }
 
     //g === gender
     function getSelectedGender( groupName )
@@ -114,7 +126,8 @@ let isValid = true;
     //profession ( pErr === profError )
     let pErr = document.getElementById('profError');
     pErr.innerHTML = '';
-    if( !document.getElementById('prof').value )
+    profValue = getActualProfession();
+    if( !profValue )
     {
         pErr.innerHTML = 'Enter a profession :)';
         pErr.style.display = 'block';
@@ -130,13 +143,13 @@ let isValid = true;
 if( isValid )
 {
     data = {
-        prefix: document.getElementById('prefix').value,
+        prefix: getActualPrefix(),
         fname: document.getElementById('fname').value,
         lname: document.getElementById('lname').value,
         email: document.getElementById('email').value,
         dob: document.getElementById('dob').value,
         gender: gend,
-        profession: document.getElementById('prof').value,
+        profession: profValue,
         about: document.getElementById('about').value
     };
 
@@ -170,56 +183,33 @@ if( isValid )
     .catch(error => {
         console.log("Error submitting form:", error);
     });
+} else 
+{
+    generalError = document.getElementById('generalError');
+    generalError.innerHTML = "There seems to be some required data you haven't filled out";
+    generalError.style.display = 'block';
+    window.location.href="#user";
 }
 });
 
-// function pasteUser(){
-//     if( done )
-//     {
-//         document.getElementById('user').style.display = "none";
-//         document.getElementById('userData').innerHTML = `Prefix: ${data.prefix}<br>First Name: ${data.fname}`;
-//         document.getElementById('userData').style.display = 'block';
-//     }
-// }
+profDropdown = document.getElementById('prof');
+profDropdown.addEventListener("change", ()=>{
+    if( profDropdown.value === "Other" )
+    {
+        other_profession_div = document.getElementById('other_profession_div')
 
+        // add a new input (typing)
+        other_profession_div.style.display = "block";
 
-//Form validation
-// form.addEventListener("submit", evemt => {
-// 
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //light/dark mode
-// document.querySelector("body").style.backgroundcolor = "black";
-// const lightOrDark = document.getElementById("lightOrDark");
-// var count = 0;
-// lightOrDarkMode()
-// {
-//     count++;
-//     if( count % 2 == 0 )
-//     {
-//         //light mode
-
-//     } else
-//     {
-//         //dark mode
+        // allocate typing input into profession variable
         
-//     }
-// }
+        // if other's clicked, we open typing input
+        // if user clicks something else, we remove typing input & nullify their input.
+
+        // only open new typing if other's selected.
+        // if another profession (or none) is picked, new input should be absent.
+    } else {
+        other_profession_div.style.display = "none";
+    }
+
+});
